@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (photoFile != null) {
                 Uri photoURI = FileProvider.getUriForFile(this,
-                        "com.example.pmo120232p.fileprovider",
+                        "com.example.pm1e10495.fileprovider",
                         photoFile);
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
                 startActivityForResult(takePictureIntent, peticion_captura_imagen);
