@@ -3,7 +3,7 @@ package com.example.pm1e10495.Models;
 public class Contactos {
 
     private Integer id_contacto;
-    private Integer pais;
+    private String pais;
     private String nombre;
     private Integer telefono;
     private String nota;
@@ -11,13 +11,17 @@ public class Contactos {
 
 
 
-    public Contactos(Integer id_contacto, Integer pais, String nombre, Integer telefono, String nota, String foto) {
+    public Contactos(Integer id_contacto, String pais, String nombre, Integer telefono, String nota, String foto) {
         this.id_contacto = id_contacto;
         this.pais = pais;
         this.nombre = nombre;
         this.telefono = telefono;
         this.nota = nota;
         this.foto = foto;
+    }
+
+    public Contactos() {
+
     }
 
     public Integer getId_contacto() {
@@ -28,11 +32,11 @@ public class Contactos {
         this.id_contacto = id_contacto;
     }
 
-    public Integer getPais() {
+    public String getPais() {
         return pais;
     }
 
-    public void setPais(Integer pais) {
+    public void setPais(String pais) {
         this.pais = pais;
     }
 
