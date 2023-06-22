@@ -58,6 +58,7 @@
 
     </application>
 
+
     <provider
         android:name="androidx.core.content.FileProvider"
         android:authorities="com.example.pm1e10495.fileprovider"
@@ -67,5 +68,7 @@
             android:name="android.support.FILE_PROVIDER_PATHS"
             android:resource="@xml/provider_paths" />
     </provider>
+
+
 
 </manifest>
