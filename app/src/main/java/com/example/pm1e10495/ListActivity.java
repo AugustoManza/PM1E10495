@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,10 +28,14 @@ public class ListActivity extends AppCompatActivity {
     ArrayList <Contactos> lista;
     ArrayList<String> ArregloContactos;
 
+    Button btnatras;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        btnatras= (Button) findViewById(R.id.btnregresar);
 
         conexion = new SQLiteConexion(this, Transacciones.NameDatabase, null, 1);
         listContactos = (ListView) findViewById(R.id.listaContactos);
@@ -72,6 +77,13 @@ public class ListActivity extends AppCompatActivity {
                         })
                         .show();
 
+            }
+        });
+
+        btnatras.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                regresarPantallaAnterior();
             }
         });
 
@@ -117,6 +129,10 @@ public class ListActivity extends AppCompatActivity {
                     +lista.get(i).getNombre() + " - "
                     +lista.get(i).getTelefono());
         }
+    }
+
+    private void regresarPantallaAnterior() {
+        finish();
     }
 
 

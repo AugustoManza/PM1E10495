@@ -18,7 +18,7 @@ public class ActivityCall extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_call);
-
+        /*
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED ||
                 ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             // Solicitar permisos CALL_PHONE y READ_PHONE_STATE
@@ -27,6 +27,8 @@ public class ActivityCall extends AppCompatActivity {
             // Permisos CALL_PHONE y READ_PHONE_STATE ya concedidos, realizar la llamada
             makePhoneCall();
         }
+
+         */
     }
 
 
