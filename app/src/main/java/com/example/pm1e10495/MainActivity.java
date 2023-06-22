@@ -2,6 +2,7 @@ package com.example.pm1e10495;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -75,9 +76,39 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                String textonombre = nombre.getText().toString();
+                String textotelefono = telefono.getText().toString();
+                String textonota = notas.getText().toString();
+
+                if (textonombre.isEmpty()||textotelefono.isEmpty()||textonota.isEmpty()) {
+
+                    if(textonombre.isEmpty()){
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        builder.setTitle("Campo del Nombre vacío")
+                                .setMessage("Por favor, ingrese algún dato en el campo.")
+                                .setPositiveButton("Aceptar", null)
+                                .show();
+
+                    }else if(textotelefono.isEmpty()){
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        builder.setTitle("Campo telefono vacío")
+                                .setMessage("Por favor, ingrese algún dato en el campo.")
+                                .setPositiveButton("Aceptar", null)
+                                .show();
+                    } else if (textonota.isEmpty()) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        builder.setTitle("Campo notas vacío")
+                                .setMessage("Por favor, ingrese algún dato en el campo.")
+                                .setPositiveButton("Aceptar", null)
+                                .show();
+
+                    }
+
+                } else {
+                    AddContacto();
+                }
 
 
-                AddContacto();
             }
         });
 

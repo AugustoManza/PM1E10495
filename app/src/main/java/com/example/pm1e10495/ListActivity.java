@@ -1,7 +1,9 @@
 package com.example.pm1e10495;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -39,12 +41,32 @@ public class ListActivity extends AppCompatActivity {
 
         listContactos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Obtener el elemento seleccionado en la lista
-                String selectedItem = (String) adapterView.getItemAtPosition(i);
+                String selectedItem = (String) parent.getItemAtPosition(position);
+
+                String[] datos = selectedItem.split(" ");
+                String datoEspecifico = datos[2];
 
                 // Realizar alguna acción con el elemento seleccionado
                 Toast.makeText(getApplicationContext(), "Seleccionaste: " + selectedItem, Toast.LENGTH_SHORT).show();
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(ListActivity.this);
+                builder.setTitle("Acción")
+                        .setMessage("¿Deseas llamar a '" + datoEspecifico + "'?")
+                        .setPositiveButton("Sí", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        })
+                        .show();
 
             }
         });
