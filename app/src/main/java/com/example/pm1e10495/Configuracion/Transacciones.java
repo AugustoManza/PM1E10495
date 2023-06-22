@@ -17,17 +17,16 @@ public class Transacciones
     public static final String nombre="nombre";
     public static final String telefono="telefono";
     public static final String nota="nota";
+    public static final String imagen="imagen";
 
     //DDL crear y eliminar
 
     public static final String CreateTableContacto = "CREATE TABLE CONTACTOS"+
             "( id INTEGER PRIMARY KEY AUTOINCREMENT, pais TEXT, nombre TEXT, telefono INTEGER, "+
-            "nota TEXT )";
-    public static final String DROPTableContacto="DROP TABLE IF EXISTS personas";
+            "nota TEXT, imagen BLOB)";
+    public static final String DROPTableContacto="DROP TABLE IF EXISTS contactos";
 
     public static final String SelectTableContacto="SELECT * FROM "+ Transacciones.tablaContactos;
-
-
 
 
 }

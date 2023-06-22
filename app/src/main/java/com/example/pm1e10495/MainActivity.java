@@ -4,11 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
 
     Spinner Lista;
+
+    EditText nombres, apellidos, edad, correo;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,5 +24,9 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.list, android.R.layout.simple_list_item_1);
         Lista.setAdapter(adapter);
+
+
+
+
     }
 }
